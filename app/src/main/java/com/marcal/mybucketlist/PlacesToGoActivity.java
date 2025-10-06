@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class PlacesToGoActivity extends AppCompatActivity {
 
@@ -40,5 +41,9 @@ public class PlacesToGoActivity extends AppCompatActivity {
                         R.drawable.skydive,
                         4.5f)
         };
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_places_to_go);
+        BucketListEntryAdapter adapter = new BucketListEntryAdapter(placesToGo);
+        recyclerView.setAdapter(adapter);
     }
 }

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ThingsToDoActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class ThingsToDoActivity extends AppCompatActivity {
                         R.drawable.northern_lights,
                         4.5f),
                 new BucketListEntry("Road trip across USA",
-                        "Bike across Monument valley and visit Yosemite and Yellowstone. Experience american wilderness.",
+                        "Bike across Monument valley, visit Yosemite.",
                         R.drawable.road_trip,
                         5),
                 new BucketListEntry("Scubadive",
@@ -40,5 +41,9 @@ public class ThingsToDoActivity extends AppCompatActivity {
                         R.drawable.skydive,
                         3.5f)
         };
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_things_to_do);
+        BucketListEntryAdapter adapter = new BucketListEntryAdapter(thingsToDo);
+        recyclerView.setAdapter(adapter);
     }
 }
